@@ -26,7 +26,7 @@ TRIPS	        Trip info	          Trip_id, customer_id(fk), driver_id(fk), date,
 
 - WINDOWS FUNCTIONS IMPLEMENTATION
   - 1. Ranking top 5 drivers per city = 
-  SELECT drivers.city,
+   > SELECT drivers.city,
        drivers.driver_id,
        SUM(trips.amount) AS total_revenue,
        RANK() OVER (
@@ -39,7 +39,7 @@ GROUP BY drivers.city, drivers.driver_id, TO_CHAR(trips.trip_date, 'Q')
 ORDER BY drivers.city, driver_rank;
 
   - 2. Aggreggrate, running total monthly revenue = 
-  SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
+  > SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
        SUM(trips.amount) AS monthly_revenue,
        SUM(SUM(trips.amount)) OVER (
            ORDER BY TO_CHAR(trips.trip_date, 'YYYY-MM')
@@ -49,7 +49,7 @@ GROUP BY TO_CHAR(trips.trip_date, 'YYYY-MM')
 ORDER BY month;
 
   - 3. Navigation, month over month growth =  
-  SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
+   > SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
        COUNT(trips.trip_id) AS total_trips,
        LAG(COUNT(trips.trip_id)) OVER (
            ORDER BY TO_CHAR(trips.trip_date, 'YYYY-MM')
@@ -64,7 +64,7 @@ GROUP BY TO_CHAR(trips.trip_date, 'YYYY-MM')
 ORDER BY month;
 
   - 4. Distribution, customer quartiles(loyalty segmentation) = 
-  SELECT trips.customer_id,
+   > SELECT trips.customer_id,
        COUNT(trips.trip_id) AS trip_count,
        NTILE(4) OVER (ORDER BY COUNT(trips.trip_id) DESC) AS quartile
 FROM trips
@@ -72,7 +72,7 @@ GROUP BY trips.customer_id
 ORDER BY quartile, trip_count DESC;
 
   - 5. Moving average , 3 month rolling average of trips = 
-  SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
+   > SELECT TO_CHAR(trips.trip_date, 'YYYY-MM') AS month,
        COUNT(trips.trip_id) AS trips,
        ROUND(
          AVG(COUNT(trips.trip_id)) OVER (
