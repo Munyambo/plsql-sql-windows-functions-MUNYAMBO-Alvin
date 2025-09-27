@@ -118,7 +118,7 @@ Last but not least, the distribution query splits customers into quartiles based
   6. W3schools ( https://www.w3schools.com/sql/sql_window_functions.asp )
   7. Data school ( https://www.youtube.com/watch?v=8vTX2z3IOFQ )
   8. TechontheNet ( https://www.youtube.com/watch?v=Jh6Xv5l6Pp0 )
-  9. Move Share by Volkswagen (Move Rwanda) ( https://move.rw/?utm_source=chatgpt.com )
+  9. Move Share by Volkswagen, Move Rwanda ( https://move.rw/?utm_source=chatgpt.com )
   10. Oracle corporation ( https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/Window-Functions.html )
 
 DONE!
