@@ -19,10 +19,10 @@ Assignment using PL/SQL window functions
 - DATABASE SCHEMA
  I used Oracle DBMS. The analysis utilizes a relational database with three primary tables:
 
- Table	      Purpose 	          Key columns
-CUSTOMERS	    Customer info	      Customer_id(pk), Fname, Lname, city
-DRIVERS	      Driver info	        Driver_id(pk), Fname, Lname, city
-TRIPS	        Trip info	          Trip_id, customer_id(fk), driver_id(fk), date, amount.
+> Table	      Purpose 	          Key columns
+> CUSTOMERS	    Customer info	      Customer_id(pk), Fname, Lname, city
+> DRIVERS	      Driver info	        Driver_id(pk), Fname, Lname, city
+> TRIPS	        Trip info	          Trip_id, customer_id(fk), driver_id(fk), date, amount.
 
 - WINDOWS FUNCTIONS IMPLEMENTATION
   - 1. Ranking top 5 drivers per city = 
